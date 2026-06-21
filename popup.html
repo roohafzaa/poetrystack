@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poetrystack</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 280px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #1c1c1e;
+      color: #f0f0f0;
+      padding: 18px 16px 16px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .logo {
+      width: 32px;
+      height: 32px;
+      background: #ff6719;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo svg { display: block; }
+    h1 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.3;
+    }
+    .badge {
+      font-size: 11px;
+      color: #888;
+      margin-top: 2px;
+    }
+    p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #d1d1d1;
+      margin-bottom: 16px;
+    }
+    .steps {
+      list-style: none;
+      font-size: 13px;
+    }
+    .steps li {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+    .step-num {
+      width: 18px;
+      height: 18px;
+      background: #333;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .kofi-image-link {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+      transition: transform 0.1s ease;
+      text-decoration: none;
+    }
+    
+    .kofi-image-link:active {
+      transform: scale(0.97);
+    }
+    
+    .kofi-image-link img {
+      height: 38px; 
+      width: auto;
+      display: block;
+    }
+  </style>
+</head>
+    <body>
+  <div class="header">
+    <div class="logo">
+      <img src="icons/logo32.png" width="18" height="18" alt="Poetrystack Logo">
+    </div>
+    <div>
+      <h1>Poetrystack</h1>
+      <div class="badge" id="spt-version">v1.0.0</div>
+    </div>
+  </div>
+
+ 
+  <a href="https://ko-fi.com/nocturneletters" target="_blank" rel="noopener noreferrer" class="kofi-image-link">
+    <img src="support_me_on_kofi_beige.webp" alt="Support me on Ko-fi">
+  </a>
+  
+  <p>Allows you to restack poetry-formatted text - just select any poetry block and restack it.</p>
+  
+  <ol class="steps">
+    <li>
+      <div class="step-num">1</div>
+      <span>Open any poetry-formatted Substack post</span>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <span>Highlight the poetry block you want to restack</span>
+    </li>
+    <li>
+      <div class="step-num">3</div>
+      <span>Click the <strong>Restack with note</strong> button in the floating toolbar</span>
+    </li>
+    <li>
+      <div class="step-num">4</div>
+      <span>Pick your quote card theme</span>
+    </li>
+    <li>
+      <div class="step-num">5</div>
+      <span>Wait for the card to load</span>
+    </li>
+    <li>
+      <div class="step-num">6</div>
+      <span><strong>IMPORTANT: </strong>Keep the post preview next to your card (needed to notify the author you're restacking their post)</span>
+    </li>
+    <li>
+      <div class="step-num">7</div>
+      <span>Hit post</span>
+    </li>
+  </ol>
+    <script src="popup.js"></script>
+  </body>
+</html>

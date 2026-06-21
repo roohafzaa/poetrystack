@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poetrystack — Privacy Policy</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      max-width: 680px;
+      margin: 60px auto;
+      padding: 0 24px 80px;
+      color: #1a1a1a;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    h1 { font-size: 26px; margin-bottom: 4px; }
+    h2 { font-size: 18px; margin-top: 36px; margin-bottom: 8px; }
+    .meta { color: #666; font-size: 14px; margin-bottom: 40px; }
+    p { margin: 0 0 16px; }
+    a { color: #ff6719; }
+  </style>
+</head>
+<body>
+
+  <h1>Poetrystack - Privacy Policy</h1>
+  <p class="meta">Last updated: June 2026 &nbsp;·&nbsp; Version 1.0.0</p>
+
+  <p>Poetrystack is a Chrome extension that lets you restack poetry-formatted text on Substack as a styled quote card. This page explains what the extension does and does not do with your data.</p>
+
+  <h2>What is collected</h2>
+  <p>Nothing. Poetrystack does not collect, transmit, store, or share any personal data. There are no analytics, no tracking, and no external servers involved.</p>
+
+  <h2>What happens locally in your browser</h2>
+  <p>When you highlight a poetry block and click "Restack with note," the extension reads the selected text and a few pieces of public page metadata (the post title, author name, and URL) to build a quote card. That data lives in memory only for as long as it takes to generate the card. It never leaves your browser tab.</p>
+  <p>The extension takes a screenshot of the quote card area to attach it as an image in Substack's notes composer. That screenshot is passed directly to the composer and is never sent to any external server.</p>
+  <p>The "Copy quote" button writes selected text to your clipboard. That is a one-way write to your own device - nothing is read back or stored.</p>
+
+  <h2>Permissions explained</h2>
+  <p><strong>clipboardWrite</strong> - used only to copy selected poetry text to your clipboard when you click "Copy quote," or as a fallback if the automated restack flow can't find Substack's composer.</p>
+  <p><strong>Host permissions (&lt;all_urls&gt;)</strong> - Substack publications can run on custom domains, so the extension needs broad host access to work across all of them. At runtime, the content script checks for Substack-specific page signals and exits immediately on any page that isn't a Substack post or note. No code runs on unrelated sites.</p>
+
+  <h2>Third parties</h2>
+  <p>Poetrystack does not use any third-party services, SDKs, analytics tools, or advertising networks. No data is sold or transferred to anyone.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If anything here changes in a future version, this page will be updated and the "Last updated" date above will reflect that. The extension version number in the Chrome Web Store will also change.</p>
+
+  <h2>Contact</h2>
+  <p>Questions? Reach out via dm at <a href="https://substack.com/@nocturneletters" target="_blank" rel="noopener">substack.com/@nocturneletters</a>.</p>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* styles.css
+ *
+ * Styling for the selection toolbar and toast notification injected by
+ * content.js. The quote-card picker UI (theme dots, alignment buttons,
+ * mock card) is intentionally NOT here, content.js injects that CSS at
+ * runtime instead, since it needs to live inside Substack's composer modal.
+ *
+ * Class names are prefixed with "spt-" (Substack Poetry Tool) to avoid
+ * collisions with Substack's own styles.
+ */
+
+/* Floating toolbar that appears above a selected poetry block, offering
+   "Restack with note" and "Copy quote". Hidden by default and faded in
+   via .spt-visible once a valid selection is detected. */
+#spt-bar {
+  position: absolute;
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 6px;
+  background: #1c1c1e;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.45),
+    0 1px 4px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(5px) scale(0.97);
+  transition:
+    opacity 0.14s ease,
+    transform 0.14s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  white-space: nowrap;
+  box-sizing: border-box !important;
+}
+
+#spt-bar.spt-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+/* Shared base styling for both toolbar buttons. */
+.spt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  line-height: 1.2;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none !important;
+  transition: background 0.12s ease, transform 0.08s ease;
+  box-sizing: border-box;
+}
+
+.spt-btn:focus-visible {
+  outline: 2px solid #ff6719;
+  outline-offset: 2px;
+}
+
+.spt-btn:active {
+  transform: scale(0.96);
+}
+
+/* "Restack with note", the primary, orange-branded action. */
+.spt-primary {
+  background: #ff6719;
+  color: #fff !important;
+}
+
+.spt-primary:hover {
+  background: #e85c10;
+}
+
+/* "Copy quote", secondary, lower-emphasis action. */
+.spt-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #d1d1d1 !important;
+}
+
+.spt-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff !important;
+}
+
+/* Vertical divider between the primary and secondary buttons. */
+.spt-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+  margin: 0 2px;
+}
+
+.spt-btn svg {
+  flex-shrink: 0;
+  display: block;
+}
+
+/* Bottom-of-screen toast used for status messages ("Quote copied!",
+   "Opening the notes composer...", etc). Faded in via .spt-toast-on. */
+#spt-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #1c1c1e;
+  color: #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 22px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  z-index: 2147483647;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  white-space: nowrap;
+}
+
+#spt-toast.spt-toast-on {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
